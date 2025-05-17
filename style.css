@@ -19,7 +19,7 @@ body {
   border-radius: 20px;
   padding: 20px;
   width: 90%;
-  max-width: 400px;
+  max-width: 800px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -66,5 +66,123 @@ button:hover {
 
   #weatherResult {
     font-size: 1rem;
+  }
+}
+#weatherResult img {
+  width: 100px;
+  height: 100px;
+}
+
+.forecast-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 24px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.forecast-day {
+  background: rgba(255,255,255,0.18);
+  border-radius: 14px;
+  padding: 14px 10px 10px 10px;
+  flex: 1 1 70px;
+  min-width: 70px;
+  max-width: 90px;
+  margin: 0 2px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.18s;
+}
+
+.forecast-day:hover {
+  transform: translateY(-4px) scale(1.04);
+  background: rgba(255,255,255,0.28);
+}
+
+.forecast-day .forecast-date {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #FFD700;
+  margin-bottom: 4px;
+}
+
+.forecast-day .forecast-icon {
+  width: 38px;
+  height: 38px;
+  margin-bottom: 4px;
+}
+
+.forecast-day .forecast-temp {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 2px;
+}
+
+.forecast-day .forecast-desc {
+  font-size: 0.85rem;
+  color: #f1f1f1;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+@media (max-width: 500px) {
+  .forecast-container {
+    gap: 4px;
+    margin-top: 14px;
+  }
+  .forecast-day {
+    min-width: 56px;
+    max-width: 70px;
+    padding: 8px 4px 6px 4px;
+  }
+  .forecast-day .forecast-icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+/* Forecast Container */
+.forecast-container {
+  margin-top: 30px;
+  color: #fff;
+  text-align: center;
+}
+
+.forecast-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.forecast-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  padding: 10px;
+  border-radius: 15px;
+  width: 130px;
+  transition: transform 0.3s ease;
+}
+
+.forecast-card:hover {
+  transform: scale(1.05);
+}
+
+.forecast-card img {
+  width: 60px;
+  height: 60px;
+}
+
+@media (max-width: 500px) {
+  .forecast-card {
+    width: 100px;
+  }
+
+  .forecast-card p {
+    font-size: 0.9rem;
   }
 }
