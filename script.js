@@ -9,7 +9,9 @@ if (!city) {
   weatherDiv.innerHTML = `<p>Please enter a city name.</p>`;
   setTimeout(() => weatherDiv.classList.add('show'), 10);
   return;
-}
+  }
+
+  showSpinner();
 
 fetch(`https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${apiKey}&units=metric`)
   .then(response => response.json())
@@ -66,6 +68,7 @@ function getForecast(city) {
         forecastDiv.innerHTML += `</div>`;
         setTimeout(() => forecastDiv.classList.add('show'), 10);
       }
+      hideSpinner();
     });
 }
 }
@@ -83,4 +86,14 @@ window.addEventListener('DOMContentLoaded', () => {
   if (input) {
     input.addEventListener('input', debounceGetWeather);
   }
+
 });
+
+function showSpinner() {
+  document.getElementById('loadingSpinner').classList.remove('hidden');
+}
+
+function hideSpinner() {
+  document.getElementById('loadingSpinner').classList.add('hidden');
+}
+

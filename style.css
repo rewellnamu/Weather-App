@@ -13,6 +13,7 @@ body {
   text-align: center;
 }
 
+
 .weather-container {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
@@ -185,4 +186,23 @@ button:hover {
   .forecast-card p {
     font-size: 0.9rem;
   }
+}
+.spinner {
+  border: 6px solid rgba(255, 255, 255, 0.2);
+  border-top: 6px solid #ffcc00; /* yellow accent */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hidden {
+  display: none;
 }
