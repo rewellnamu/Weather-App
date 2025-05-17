@@ -1,0 +1,107 @@
+/* style.css */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  /* Weather-themed background image with gradient overlay */
+  background: url('/icon/bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #222;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.weather-container {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  padding: 40px 32px 32px 32px;
+  max-width: 350px;
+  width: 100%;
+  margin: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 24px;
+  color: #0077b6;
+  letter-spacing: 1px;
+}
+input[type="text"] {
+  padding: 12px 14px;
+  font-size: 1rem;
+  border: 1px solid #b0bec5;
+  border-radius: 8px;
+  outline: none;
+  margin-bottom: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border 0.2s;
+}
+input[type="text"]:focus {
+  border: 1.5px solid #0077b6;
+}
+button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  background: linear-gradient(90deg, #0077b6 0%, #00b4d8 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  transition: background 0.2s, transform 0.1s;
+  margin-bottom: 18px;
+}
+button:hover, button:focus {
+  background: linear-gradient(90deg, #0096c7 0%, #48cae4 100%);
+  transform: translateY(-2px) scale(1.03);
+}
+#weatherResult {
+  margin-top: 10px;
+  width: 100%;
+  min-height: 60px;
+  background: #f1f8ff;
+  border-radius: 8px;
+  padding: 18px 12px;
+  box-sizing: border-box;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  font-size: 1.07rem;
+  color: #222;
+  word-break: break-word;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s cubic-bezier(.4,0,.2,1), transform 0.5s cubic-bezier(.4,0,.2,1);
+}
+
+#weatherResult.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+#weatherResult h2 {
+  margin: 0 0 8px 0;
+  color: #0077b6;
+  font-size: 1.3rem;
+}
+#weatherResult p {
+  margin: 6px 0;
+  font-size: 1.08rem;
+}
+@media (max-width: 480px) {
+  .weather-container {
+    padding: 24px 8px 18px 8px;
+    max-width: 98vw;
+  }
+  h1 {
+    font-size: 1.4rem;
+  }
+  #weatherResult {
+    font-size: 0.98rem;
+    padding: 12px 6px;
+    /* Responsive animation adjustment */
+    transition: opacity 0.4s cubic-bezier(.4,0,.2,1), transform 0.4s cubic-bezier(.4,0,.2,1);
+  }
+}
