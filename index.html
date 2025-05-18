@@ -1,21 +1,59 @@
 <!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Weather App</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body id="appcontainer">
-  <div class="weather-container">
-    <h1>Weather App</h1>
-    <input type="text" id="cityInput" placeholder="Enter city">
-    <button onclick="getWeather()">Get Weather</button>
-    <div id="weatherResult"></div>
-    <div id="forecastContainer" class="forecast-container"></div>
-    <div id="loadingSpinner" class="spinner hidden"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="search-bar">
+      <input type="text" id="cityInput" placeholder="Enter city..." />
+      <button onclick="getWeather()">Search</button>
+    </div>
 
-  </div>
-  <script src="script.js"></script>
-</body>
+    <div class="weather-ui-container">
+      <div class="weather-main-card">
+        <div class="weather-date" id="mainDate">--</div>
+        <div class="weather-location" id="mainLocation">
+          <span id="mainLocationIcon">📍</span>
+          <span id="mainLocationText">City, Country</span>
+        </div>
+        <div class="weather-temp">
+          <img
+            id="mainIcon"
+            class="weather-icon"
+            src=""
+            alt=""
+            style="display: none"
+          />
+          <span id="mainTemp">-- °C</span>
+        </div>
+        <div class="weather-desc" id="mainDesc">Description</div>
+      </div>
+      <div class="weather-side-card">
+        <div class="weather-details">
+          <div class="weather-details-row">
+            <span>PRECIPITATION</span>
+            <span id="precipitation">--</span>
+          </div>
+          <div class="weather-details-row">
+            <span>HUMIDITY</span>
+            <span id="humidity">--</span>
+          </div>
+          <div class="weather-details-row">
+            <span>WIND</span>
+            <span id="wind">--</span>
+          </div>
+        </div>
+        <div class="weather-forecast-row" id="forecastRow">
+          <!-- JS will fill forecast cards here -->
+        </div>
+      </div>
+    </div>
+
+    <div id="loadingSpinner" class="spinner hidden"></div>
+    <script src="script.js"></script>
+  </body>
 </html>
